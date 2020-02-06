@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- --JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!------HANDLEBARS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.js" integrity="sha256-v28e/OFwH4PmlZT+LbqfwlMOE1hImPNesl1Ha52e6pk=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="input_film">
+      <input type="text" placeholder="Inserisci il titolo di un film" value="">
+      <button type="button" class="button">Cerca</button>
+    </div>
+    <ul class="listaFilm">
+
+    </ul>
+
+
+    <script id="film-template" type="text/x-handlebars-template">
+      <li>{{title}} - {{original_title}} - {{original_language}} - {{vote_count}}</li>
+    </script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
