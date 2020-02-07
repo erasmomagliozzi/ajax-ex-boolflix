@@ -3,6 +3,12 @@
   padding:0;
   box-sizing: border-box;
 }
+body{
+  background-color: #bfbfbf;
+}
 .yellow{
   color:yellow;
+}
+li img{
+  width: 50px;
 }
