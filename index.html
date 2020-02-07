@@ -2,11 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <!-- --JQUERY -->
+    <title>Boolflix</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!------HANDLEBARS -->
+    <!---HANDLEBARS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.js" integrity="sha256-v28e/OFwH4PmlZT+LbqfwlMOE1hImPNesl1Ha52e6pk=" crossorigin="anonymous"></script>
+    <!-- FONT AWESOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="input_film">
@@ -17,9 +20,21 @@
 
     </ul>
 
-
     <script id="film-template" type="text/x-handlebars-template">
-      <li>{{title}} - {{original_title}} - {{original_language}} - {{vote_count}}</li>
+      <ul>
+        <h4>{{title}}</h4>
+        <li>{{original_title}} - {{original_language}} 
+          <div class="star">
+           <i class="far fa-star first" data-star=1></i>
+           <i class="far fa-star second" data-star=2></i>
+           <i class="far fa-star" data-star=3></i>
+           <i class="far fa-star" data-star=4></i>
+           <i class="far fa-star" data-star=5></i>
+         </div>
+
+           {{vote_average}}</li>
+
+      </ul>
     </script>
 
     <script src="js/script.js" charset="utf-8"></script>
