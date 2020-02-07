@@ -26,6 +26,7 @@ $(document).ready(function(){
 // FUNZIONI-----------
   function stampaFilm(films){
     $('.listaFilm').html('');
+
     var source = $('#film-template').html();
     var template = Handlebars.compile(source);
   for (var i = 0; i < films.length; i++) {
@@ -47,12 +48,7 @@ $(document).ready(function(){
       voto = 0;
     }
     var newVote = voto;
-   //  console.log(newVote);
-   // if(newVote == 3){
-   //   $('.star').first().addClass('yellow');
-   // }
-
-
+    // ----------------------------------
     var context = {
       title: thisFilm.title,
       original_title: thisFilm.original_title,
@@ -63,8 +59,8 @@ $(document).ready(function(){
     var html = template(context);
     $('.listaFilm').append(html);
   }
-
 }
+
 
 
 
