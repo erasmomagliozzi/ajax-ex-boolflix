@@ -32,29 +32,43 @@ $(document).ready(function(){
   for (var i = 0; i < films.length; i++) {
     var thisFilm = films[i];
 
-    // VOTO IN NUMERO DA 1 A 5
-    var voto = thisFilm.vote_average;
-    if(voto >= 1 && voto <= 2.5){
-      voto = 1;
-    }else if(voto >= 2.6 && voto <= 4.5){
-      voto = 2;
-    }else if(voto >= 4.6 && voto <= 6.5){
-      voto = 3;
-    }else if(voto >= 6.6 && voto <= 8.5){
-      voto = 4;
-    }else if(voto >= 8.6 && voto <= 10){
-      voto = 5;
-    }else if (voto < 1) {
-      voto = 0;
+function printStars(){
+
+  // VOTO IN NUMERO DA 1 A 5
+  var voto = thisFilm.vote_average;
+  if(voto >= 1 && voto <= 2.5){
+    voto = 1;
+  }else if(voto >= 2.6 && voto <= 4.5){
+    voto = 2;
+  }else if(voto >= 4.6 && voto <= 6.5){
+    voto = 3;
+  }else if(voto >= 6.6 && voto <= 8.5){
+    voto = 4;
+  }else if(voto >= 8.6 && voto <= 10){
+    voto = 5;
+  }else if (voto < 1) {
+    voto = 0;
+  }
+  var newVote = voto;
+  console.log(newVote);
+  // ----------------------------------
+  var stars='';
+  for(var i = 1; i <= 5; i++){
+    if(i < newVote){
+      var stella = '<i class="fas fa-star yellow"></i>';
+    }else{
+      var stella = '<i class="far fa-star yellow"></i>';
     }
-    var newVote = voto;
-    // ----------------------------------
+    stars += stella;
+  }
+  return stars;
+}
 
     var context = {
       title: thisFilm.title,
       original_title: thisFilm.original_title,
       original_language: thisFilm.original_language,
-      vote_average: newVote
+      vote_average: printStars(thisFilm.vote_average)
      };
 
     var html = template(context);
