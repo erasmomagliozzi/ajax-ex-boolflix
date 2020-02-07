@@ -19,11 +19,21 @@
     <ul class="listaFilm">
 
     </ul>
+    <ul class="listaSerie">
+
+    </ul>
 
     <script id="film-template" type="text/x-handlebars-template">
       <ul>
-        <h4>{{title}}</h4>
+        <h4>FILM - {{title}}</h4>
         <li>{{original_title}} - {{{original_language}}}</li>
+        <li>{{{vote_average}}}</li>
+      </ul>
+    </script>
+    <script id="serie-template" type="text/x-handlebars-template">
+      <ul>
+        <h4>SERIE TV - {{name}}</h4>
+        <li>{{original_name}} - {{{original_language}}}</li>
         <li>{{{vote_average}}}</li>
       </ul>
     </script>
