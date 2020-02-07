@@ -49,6 +49,7 @@ $(document).ready(function(){
     }
     var newVote = voto;
     // ----------------------------------
+
     var context = {
       title: thisFilm.title,
       original_title: thisFilm.original_title,
@@ -59,6 +60,7 @@ $(document).ready(function(){
     var html = template(context);
     $('.listaFilm').append(html);
   }
+
 }
 
 
