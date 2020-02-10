@@ -107,7 +107,8 @@ function flag(){
       title: thisFilm.title,
       original_title: thisFilm.original_title,
       original_language: flag(thisFilm.original_language),
-      vote_average: printStars(thisFilm.vote_average)
+      vote_average: printStars(thisFilm.vote_average),
+      poster_path: thisFilm.poster_path
      };
 
     var html = template(context);
@@ -171,11 +172,13 @@ function flag(){
     return bandiera;
   }
 
+
       var context = {
         name: thisSerie.name,
         original_name: thisSerie.original_name,
         original_language: flag(thisSerie.original_language),
-        vote_average: printStars(thisSerie.vote_average)
+        vote_average: printStars(thisSerie.vote_average),
+        poster_path: thisSerie.poster_path
        };
 
       var html = template(context);

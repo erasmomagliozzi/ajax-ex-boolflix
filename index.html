@@ -12,25 +12,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
   </head>
   <body>
+   <!-- HEADER -->
+    <header>
+      <img class="logo"src="https://fontmeme.com/permalink/200210/6377ba752ce9e459bcb9a428b2540e7e.png" alt="netflix-font" border="0"></a>
+
+    </header>
+    <!-- FINE HEADER -->
+    <!-- SEARCH BAR -->
     <div class="input_film">
       <input type="text" placeholder="Inserisci il titolo di un film" value="">
       <button type="button" class="button">Cerca</button>
     </div>
+    <!-- CONTAINER -->
     <div class="square">
+     <div class="film">
+        <ul class="listaFilm"></ul>
+     </div>
+     <div class="serie">
+        <ul class="listaSerie"></ul>
+     </div>
+   </div>
 
-    <ul class="listaFilm">
-
-    </ul>
-    <ul class="listaSerie">
-
-    </ul>
-  </div>
 
     <script id="film-template" type="text/x-handlebars-template">
       <ul>
         <h4>FILM - {{title}}</h4>
         <li>{{original_title}} - {{{original_language}}}</li>
         <li>{{{vote_average}}}</li>
+        <img src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
       </ul>
     </script>
     <script id="serie-template" type="text/x-handlebars-template">
@@ -38,6 +47,7 @@
         <h4>SERIE TV - {{name}}</h4>
         <li>{{original_name}} - {{{original_language}}}</li>
         <li>{{{vote_average}}}</li>
+        <img src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
       </ul>
     </script>
 

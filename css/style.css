@@ -6,6 +6,18 @@
 body{
   background-color: #bfbfbf;
 }
+/* HEADER */
+header{
+  background-color: black;
+  height: 100px;
+}
+.logo{
+  width: 250px;
+}
+
+
+
+
 .yellow{
   color:yellow;
 }
