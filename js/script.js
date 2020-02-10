@@ -39,10 +39,19 @@ $(document).ready(function(){
         alert("E' avvenuto un errore. " + errore);
     }
   });
-
+ // $('ul').on("hover", function(){
+ //   .mouseover(function(){
+ //     $('.description').removeClass('none').addClass('block');
+ //   })
+ //   .mouseout(function(){
+ //     $('.description').addClass('none').removeClass('block');
+ //   });
+ //
+ // });
 
 
 });
+
 
 
 
@@ -117,7 +126,7 @@ function flag(){
   }
 // FUNZIONE SERIE TV
   function stampaSerie(series){
-    $('.listaserie').html('');
+    $('.listaSerie').html('');
     var source = $('#serie-template').html();
     var template = Handlebars.compile(source);
     for (var i = 0; i < series.length; i++) {

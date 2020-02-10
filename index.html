@@ -30,7 +30,7 @@
       <div class="right_side">
         <!-- SEARCH BAR -->
         <div class="input_film">
-          <input type="text" placeholder="Inserisci il titolo di un film" value="">
+          <input type="text" placeholder="Inserisci un titolo" value="">
           <button type="button" class="button"><i class="fas fa-search"></i></button>
         </div>
       </div>
@@ -40,28 +40,38 @@
     <!-- CONTAINER -->
     <div class="square">
      <div class="film">
+       <h1>FILM</h1>
         <ul class="listaFilm"></ul>
      </div>
      <div class="serie">
+       <h1>SERIE TV</h1>
         <ul class="listaSerie"></ul>
      </div>
    </div>
 
 
+
     <script id="film-template" type="text/x-handlebars-template">
       <ul>
-        <h4>FILM - {{title}}</h4>
-        <li>{{original_title}} - {{{original_language}}}</li>
-        <li>{{{vote_average}}}</li>
-        <img src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
+        <img class="img_template" src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
+
+        <div class="description none">
+          <h4>FILM - {{title}}</h4>
+          <li>{{original_title}} - {{{original_language}}}</li>
+          <li>{{{vote_average}}}</li>
+        </div>
+
       </ul>
     </script>
     <script id="serie-template" type="text/x-handlebars-template">
       <ul>
-        <h4>SERIE TV - {{name}}</h4>
-        <li>{{original_name}} - {{{original_language}}}</li>
-        <li>{{{vote_average}}}</li>
-        <img src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
+        <div class="description none">
+          <img class="img_template" src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
+
+          <h4>SERIE TV - {{name}}</h4>
+          <li>{{original_name}} - {{{original_language}}}</li>
+          <li>{{{vote_average}}}</li>
+        </div>
       </ul>
     </script>
 
