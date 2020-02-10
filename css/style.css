@@ -5,14 +5,50 @@
 }
 body{
   background-color: #bfbfbf;
+  font-family: 'Bebas Neue', cursive;
 }
 /* HEADER */
 header{
   background-color: black;
   height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }
 .logo{
   width: 250px;
+  margin: 10px;
+}
+.left_side{
+  display: flex;
+  align-items: center;
+
+}
+.left_side ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.left_side ul li{
+  margin: 10px;
+  font-size: 30px;
+}
+.right_side{
+  display: flex;
+  align-items: center;
+}
+.input_film input{
+  width: 200px;
+  height: 25px;
+  margin:0 20px;
+  border-radius: 50px;
+}
+.input_film button{
+  border: 0;
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  margin: 0 20px;
 }
 
 

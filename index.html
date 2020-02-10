@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Boolflix</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!---HANDLEBARS -->
@@ -14,15 +16,27 @@
   <body>
    <!-- HEADER -->
     <header>
-      <img class="logo"src="https://fontmeme.com/permalink/200210/6377ba752ce9e459bcb9a428b2540e7e.png" alt="netflix-font" border="0"></a>
+      <div class="left_side">
+        <img class="logo"src="https://fontmeme.com/permalink/200210/6377ba752ce9e459bcb9a428b2540e7e.png" alt="netflix-font" border="0"></a>
+        <ul>
+          <li>HOME</li>
+          <li>SERIE TV</li>
+          <li>FILM</li>
+          <li>ORIGINALI</li>
+          <li>AGGIUNTI DI RECENTE</li>
+          <li>LA MIA LISTA</li>
+        </ul>
+      </div>
+      <div class="right_side">
+        <!-- SEARCH BAR -->
+        <div class="input_film">
+          <input type="text" placeholder="Inserisci il titolo di un film" value="">
+          <button type="button" class="button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
 
     </header>
     <!-- FINE HEADER -->
-    <!-- SEARCH BAR -->
-    <div class="input_film">
-      <input type="text" placeholder="Inserisci il titolo di un film" value="">
-      <button type="button" class="button">Cerca</button>
-    </div>
     <!-- CONTAINER -->
     <div class="square">
      <div class="film">
