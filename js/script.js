@@ -1,60 +1,62 @@
 // d8893da2d49e4cabc0a135a6ae6fcade
 $(document).ready(function(){
 
-  $('button').click(function(){
-  $.ajax(
-   {
-    url: "https://api.themoviedb.org/3/search/movie?",
-    method: "GET",
-    data:{
-      api_key : 'd8893da2d49e4cabc0a135a6ae6fcade',
-      query: $('input').val(),
-    },
-    success: function (data, stato) {
-      // CHIAMATA AJAX PER SERIE TV
-      $.ajax(
-       {
-        url: "https://api.themoviedb.org/3/search/tv",
-        method: "GET",
-        data:{
-          api_key : 'd8893da2d49e4cabc0a135a6ae6fcade',
-          query: $('input').val(),
-        },
-        success: function (data, stato) {
-          var serie = data.results;
-          console.log(serie);
-            stampaSerie(serie);
-        },
-        error: function (richiesta, stato, errori) {
-            alert("E' avvenuto un errore. " + errore);
-        }
-      });
-      // FINE CHIAMAT SERIE TV
-      var film = data.results;
-      console.log(film);
-      stampaFilm(film);
-    },
-    error: function (richiesta, stato, errori) {
-        alert("E' avvenuto un errore. " + errore);
-    }
 
-
+    $('button').click(function(){
+      search();
     });
-    // hover();
+      $('.input_film').keypress(function (event) {
+        if(event.which == 13) {
+      search();
+
+    }
   });
 
 
 
 
+
+
 // FUNZIONI-----------
-  // function hover(){
-  //   $('.listaFilm').find('.cover');
-  //   ('this').mouseover(function(){
-  //     // $(this).addClass('description').addClass('block');
-  //     console.log('entrato');
-  //   });
-  //
-  // }
+  function search(){
+    $.ajax(
+     {
+      url: "https://api.themoviedb.org/3/search/movie?",
+      method: "GET",
+      data:{
+        api_key : 'd8893da2d49e4cabc0a135a6ae6fcade',
+        query: $('input').val(),
+      },
+      success: function (data, stato) {
+        // CHIAMATA AJAX PER SERIE TV
+        $.ajax(
+         {
+          url: "https://api.themoviedb.org/3/search/tv",
+          method: "GET",
+          data:{
+            api_key : 'd8893da2d49e4cabc0a135a6ae6fcade',
+            query: $('input').val(),
+          },
+          success: function (data, stato) {
+            var serie = data.results;
+            console.log(serie);
+              stampaSerie(serie);
+          },
+          error: function (richiesta, stato, errori) {
+              alert("E' avvenuto un errore. " + errore);
+          }
+        });
+        // FINE CHIAMAT SERIE TV
+        var film = data.results;
+        console.log(film);
+        stampaFilm(film);
+      },
+      error: function (richiesta, stato, errori) {
+          alert("E' avvenuto un errore. " + errore);
+      }
+
+      });
+  }
   function stampaFilm(films){
     $('.listaFilm').html('');
     var source = $('#film-template').html();
@@ -111,17 +113,18 @@ $(document).ready(function(){
   return bandiera;
 }
     var cover;
-if(thisFilm.poster_path == null) {
-  cover = 'img/default.png';
-}else{
+   if(thisFilm.poster_path == null) {
+    cover = 'img/default.png';
+   }else{
    cover = 'https://image.tmdb.org/t/p/w185/'+ thisFilm.poster_path;
-}
+    }
     var context = {
       title: thisFilm.title,
       original_title: thisFilm.original_title,
       original_language: flag(thisFilm.original_language),
       vote_average: printStars(thisFilm.vote_average),
-      poster_path: cover
+      poster_path: cover,
+      overview: thisFilm.overview
      };
 
     var html = template(context);
