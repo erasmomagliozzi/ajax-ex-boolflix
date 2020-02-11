@@ -52,23 +52,22 @@
 
 
     <script id="film-template" type="text/x-handlebars-template">
-      <ul>
-        <img class="img_template" src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
+      <ul class="cover">
+        <img class="img_template" src="{{poster_path}}" alt="">
 
-        <div class="description none">
-          <h4>FILM - {{title}}</h4>
+        <div class="description">
+          <h4>{{title}}</h4>
           <li>{{original_title}} - {{{original_language}}}</li>
           <li>{{{vote_average}}}</li>
         </div>
-
       </ul>
     </script>
     <script id="serie-template" type="text/x-handlebars-template">
-      <ul>
+      <ul class="cover">
+        <img class="img_template" src="{{poster_path}}" alt="">
         <div class="description none">
-          <img class="img_template" src="https://image.tmdb.org/t/p/w185/{{poster_path}}" alt="">
 
-          <h4>SERIE TV - {{name}}</h4>
+          <h4>{{name}}</h4>
           <li>{{original_name}} - {{{original_language}}}</li>
           <li>{{{vote_average}}}</li>
         </div>

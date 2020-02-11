@@ -23,7 +23,6 @@ $(document).ready(function(){
         success: function (data, stato) {
           var serie = data.results;
           console.log(serie);
-
             stampaSerie(serie);
         },
         error: function (richiesta, stato, errori) {
@@ -38,24 +37,24 @@ $(document).ready(function(){
     error: function (richiesta, stato, errori) {
         alert("E' avvenuto un errore. " + errore);
     }
+
+
+    });
+    // hover();
   });
- // $('ul').on("hover", function(){
- //   .mouseover(function(){
- //     $('.description').removeClass('none').addClass('block');
- //   })
- //   .mouseout(function(){
- //     $('.description').addClass('none').removeClass('block');
- //   });
- //
- // });
-
-
-});
 
 
 
 
 // FUNZIONI-----------
+  // function hover(){
+  //   $('.listaFilm').find('.cover');
+  //   ('this').mouseover(function(){
+  //     // $(this).addClass('description').addClass('block');
+  //     console.log('entrato');
+  //   });
+  //
+  // }
   function stampaFilm(films){
     $('.listaFilm').html('');
     var source = $('#film-template').html();
@@ -65,40 +64,40 @@ $(document).ready(function(){
 
 
 // FUNZIONE PRINTSTARS
-function printStars(){
+  function printStars(){
 
   // VOTO IN NUMERO DA 1 A 5
-  var voto = thisFilm.vote_average;
-  if(voto >= 1 && voto <= 2.5){
-    voto = 1;
-  }else if(voto >= 2.6 && voto <= 4.5){
-    voto = 2;
-  }else if(voto >= 4.6 && voto <= 6.5){
-    voto = 3;
-  }else if(voto >= 6.6 && voto <= 8.5){
-    voto = 4;
-  }else if(voto >= 8.6 && voto <= 10){
-    voto = 5;
-  }else if (voto < 1) {
-    voto = 0;
-  }
-  var newVote = voto;
-  console.log(newVote);
-  // ----------------------------------
-  var stars='';
-  for(var i = 1; i <= 5; i++){
-    if(i < newVote){
-      var stella = '<i class="fas fa-star yellow"></i>';
-    }else{
-      var stella = '<i class="far fa-star yellow"></i>';
+    var voto = thisFilm.vote_average;
+    if(voto >= 1 && voto <= 2.5){
+     voto = 1;
+    }else if(voto >= 2.6 && voto <= 4.5){
+     voto = 2;
+    }else if(voto >= 4.6 && voto <= 6.5){
+     voto = 3;
+    }else if(voto >= 6.6 && voto <= 8.5){
+     voto = 4;
+    }else if(voto >= 8.6 && voto <= 10){
+     voto = 5;
+    }else if (voto < 1) {
+     voto = 0;
     }
-    stars += stella;
-  }
-  return stars;
+     var newVote = voto;
+     console.log(newVote);
+  // ----------------------------------
+    var stars='';
+     for(var i = 1; i <= 5; i++){
+      if(i < newVote){
+       var stella = '<i class="fas fa-star yellow"></i>';
+      }else{
+       var stella = '<i class="far fa-star yellow"></i>';
+      }
+     stars += stella;
+   }
+   return stars;
 }
 // FINE FUNZIONE PRINTSTARS
 // FUNZIONE BANDIERA
-function flag(){
+  function flag(){
   var nation = thisFilm.original_language;
   if(nation == 'en'){
     var bandiera = '<img src="https://www.pontemagra.com/open2b/var/products/10/87/0-f40a2c47-500-Bandiera-Gran-Bretagna.jpg" alt="en">'
@@ -111,13 +110,18 @@ function flag(){
   }
   return bandiera;
 }
-
+    var cover;
+if(thisFilm.poster_path == null) {
+  cover = 'img/default.png';
+}else{
+   cover = 'https://image.tmdb.org/t/p/w185/'+ thisFilm.poster_path;
+}
     var context = {
       title: thisFilm.title,
       original_title: thisFilm.original_title,
       original_language: flag(thisFilm.original_language),
       vote_average: printStars(thisFilm.vote_average),
-      poster_path: thisFilm.poster_path
+      poster_path: cover
      };
 
     var html = template(context);
@@ -134,7 +138,7 @@ function flag(){
 
 
   // FUNZIONE PRINTSTARS
-  function printStars(){
+   function printStars(){
 
     // VOTO IN NUMERO DA 1 A 5
     var voto = thisSerie.vote_average;
@@ -181,30 +185,25 @@ function flag(){
     return bandiera;
   }
 
-
+  var cover;
+     if(thisSerie.poster_path == null) {
+        cover = 'img/default.png';
+    }else{
+      cover = 'https://image.tmdb.org/t/p/w185/'+ thisSerie.poster_path;
+    }
       var context = {
         name: thisSerie.name,
         original_name: thisSerie.original_name,
         original_language: flag(thisSerie.original_language),
         vote_average: printStars(thisSerie.vote_average),
-        poster_path: thisSerie.poster_path
+        poster_path: cover
        };
 
       var html = template(context);
       $('.listaSerie').append(html);
-      }
-
-
-
-
-
+    }
 
   }
-
-
-
-
-
 
 
 });

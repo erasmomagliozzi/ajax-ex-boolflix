@@ -82,28 +82,37 @@ header{
 }
 li img{
   width: 50px;
-  position: relative;
 }
 
 .img_template{
   width: 350px;
   margin: 10px;
-  /* transition: filter 0.5s ease-in; */
+  transition: filter 0.5s ease-in;
 }
-/* .img_template:hover{
-  filter: blur(10px);
-} */
+.cover:hover .img_template{
+  filter: blur(20px);
+}
+.cover{
+  position: relative;
+}
+
 .description{
-  /* background-color: green; */
+  color: black;
   width: 350px;
   height: 520px;
   margin: 10px;
-  border: 1px solid black;
   position: absolute;
-
+  font-size: 50px;
+  display: none;
+}
+.description li{
+  list-style: none;
+}
+.cover:hover .description{
+  display: block;
 }
 .block{
-  display: block;
+  display:block;
 }
 .none{
   display: none;
