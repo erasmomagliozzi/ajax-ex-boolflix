@@ -123,3 +123,7 @@ li img{
 .none{
   display: none;
 }
+#list li:hover{
+  cursor: pointer;
+  color: red;
+}
